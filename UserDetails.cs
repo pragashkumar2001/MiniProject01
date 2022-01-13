@@ -2,24 +2,28 @@
 {
     public partial class UserDetails : Form
     {
-        public string Message { get; set; }
+        public string FullName { get; set; }
+        public int Age { get; set; }
 
-        public UserDetails(string message)
+        public UserDetails(string fullName, int age)
         {
-            Message = message;
+            FullName = fullName;
+            Age = age;
             InitializeComponent();
         }
 
         private void UserDetails_Load_1(object sender, EventArgs e)
         {
-            lblWelcomeMessage.Text = Message;
+            lblFullName.Text = FullName;
+            lblAge.Text = "You are " + Age + " years old.";
         }
 
         private void btnBack_Click_1(object sender, EventArgs e)
         {
             this.Hide();
-            CreateUserProfile createUserProfile = new CreateUserProfile();
+            CreateUserProfile createUserProfile = new();
             createUserProfile.ShowDialog();
         }
+
     }
 }

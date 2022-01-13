@@ -16,3 +16,4 @@ D:\Projects\Pragash\UserProfile\obj\Debug\net6.0-windows\UserProfile.dll
 D:\Projects\Pragash\UserProfile\obj\Debug\net6.0-windows\ref\UserProfile.dll
 D:\Projects\Pragash\UserProfile\obj\Debug\net6.0-windows\UserProfile.pdb
 D:\Projects\Pragash\UserProfile\obj\Debug\net6.0-windows\UserProfile.genruntimeconfig.cache
+D:\Projects\Pragash\UserProfile\obj\Debug\net6.0-windows\UserProfile.Properties.Resources.resources

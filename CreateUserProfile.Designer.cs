@@ -40,61 +40,68 @@
             this.txtFavouriteColor = new System.Windows.Forms.TextBox();
             this.txtPhoneNumber = new System.Windows.Forms.TextBox();
             this.txtFullName = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblMaritalStatus = new System.Windows.Forms.Label();
+            this.lblYear = new System.Windows.Forms.Label();
+            this.lblMonth = new System.Windows.Forms.Label();
+            this.lblDay = new System.Windows.Forms.Label();
+            this.lblDateOfBirth = new System.Windows.Forms.Label();
+            this.lblGender = new System.Windows.Forms.Label();
+            this.lblFavouriteColor = new System.Windows.Forms.Label();
+            this.lblPhoneNo = new System.Windows.Forms.Label();
+            this.lblAddress = new System.Windows.Forms.Label();
+            this.lblFullName = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnClear
             // 
+            this.btnClear.BackColor = System.Drawing.Color.SteelBlue;
             this.btnClear.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnClear.Location = new System.Drawing.Point(46, 586);
+            this.btnClear.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnClear.Location = new System.Drawing.Point(50, 605);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(142, 47);
             this.btnClear.TabIndex = 48;
             this.btnClear.Text = "Clear";
-            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnCreate
             // 
+            this.btnCreate.BackColor = System.Drawing.Color.SteelBlue;
             this.btnCreate.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnCreate.Location = new System.Drawing.Point(444, 586);
+            this.btnCreate.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnCreate.Location = new System.Drawing.Point(615, 605);
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Size = new System.Drawing.Size(142, 47);
             this.btnCreate.TabIndex = 47;
             this.btnCreate.Text = "Create";
-            this.btnCreate.UseVisualStyleBackColor = true;
+            this.btnCreate.UseVisualStyleBackColor = false;
             this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
             // cmbMaritalStatus
             // 
-            this.cmbMaritalStatus.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cmbMaritalStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cmbMaritalStatus.ForeColor = System.Drawing.SystemColors.WindowText;
             this.cmbMaritalStatus.FormattingEnabled = true;
             this.cmbMaritalStatus.Items.AddRange(new object[] {
             "Select",
             "Married",
             "Unmarried"});
-            this.cmbMaritalStatus.Location = new System.Drawing.Point(273, 432);
+            this.cmbMaritalStatus.Location = new System.Drawing.Point(444, 234);
             this.cmbMaritalStatus.Name = "cmbMaritalStatus";
-            this.cmbMaritalStatus.Size = new System.Drawing.Size(313, 40);
+            this.cmbMaritalStatus.Size = new System.Drawing.Size(313, 34);
             this.cmbMaritalStatus.TabIndex = 46;
             this.cmbMaritalStatus.Text = "Select";
             // 
             // radioFemale
             // 
             this.radioFemale.AutoSize = true;
-            this.radioFemale.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.radioFemale.Location = new System.Drawing.Point(467, 260);
+            this.radioFemale.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.radioFemale.ForeColor = System.Drawing.Color.Navy;
+            this.radioFemale.Location = new System.Drawing.Point(526, 443);
             this.radioFemale.Name = "radioFemale";
-            this.radioFemale.Size = new System.Drawing.Size(119, 36);
+            this.radioFemale.Size = new System.Drawing.Size(94, 26);
             this.radioFemale.TabIndex = 45;
             this.radioFemale.TabStop = true;
             this.radioFemale.Text = "Female";
@@ -103,10 +110,11 @@
             // radioMale
             // 
             this.radioMale.AutoSize = true;
-            this.radioMale.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.radioMale.Location = new System.Drawing.Point(273, 260);
+            this.radioMale.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.radioMale.ForeColor = System.Drawing.Color.Navy;
+            this.radioMale.Location = new System.Drawing.Point(526, 406);
             this.radioMale.Name = "radioMale";
-            this.radioMale.Size = new System.Drawing.Size(95, 36);
+            this.radioMale.Size = new System.Drawing.Size(73, 26);
             this.radioMale.TabIndex = 44;
             this.radioMale.TabStop = true;
             this.radioMale.Text = "Male";
@@ -114,158 +122,191 @@
             // 
             // txtAddress
             // 
-            this.txtAddress.Location = new System.Drawing.Point(273, 129);
+            this.txtAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtAddress.Location = new System.Drawing.Point(50, 234);
+            this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(313, 31);
+            this.txtAddress.Size = new System.Drawing.Size(313, 126);
             this.txtAddress.TabIndex = 42;
             // 
             // txtYear
             // 
-            this.txtYear.Location = new System.Drawing.Point(496, 342);
+            this.txtYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtYear.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtYear.Location = new System.Drawing.Point(163, 495);
             this.txtYear.Name = "txtYear";
-            this.txtYear.Size = new System.Drawing.Size(90, 31);
+            this.txtYear.Size = new System.Drawing.Size(90, 32);
             this.txtYear.TabIndex = 41;
             // 
             // txtMonth
             // 
-            this.txtMonth.Location = new System.Drawing.Point(371, 342);
+            this.txtMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtMonth.Location = new System.Drawing.Point(163, 452);
             this.txtMonth.Name = "txtMonth";
-            this.txtMonth.Size = new System.Drawing.Size(90, 31);
+            this.txtMonth.Size = new System.Drawing.Size(90, 32);
             this.txtMonth.TabIndex = 40;
             // 
             // txtDay
             // 
-            this.txtDay.Location = new System.Drawing.Point(273, 342);
+            this.txtDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtDay.Location = new System.Drawing.Point(163, 406);
             this.txtDay.Name = "txtDay";
-            this.txtDay.Size = new System.Drawing.Size(58, 31);
+            this.txtDay.Size = new System.Drawing.Size(90, 32);
             this.txtDay.TabIndex = 39;
             // 
             // txtFavouriteColor
             // 
-            this.txtFavouriteColor.Location = new System.Drawing.Point(273, 522);
+            this.txtFavouriteColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtFavouriteColor.Location = new System.Drawing.Point(444, 323);
             this.txtFavouriteColor.Name = "txtFavouriteColor";
-            this.txtFavouriteColor.Size = new System.Drawing.Size(313, 31);
+            this.txtFavouriteColor.Size = new System.Drawing.Size(313, 32);
             this.txtFavouriteColor.TabIndex = 43;
             // 
             // txtPhoneNumber
             // 
-            this.txtPhoneNumber.Location = new System.Drawing.Point(273, 196);
+            this.txtPhoneNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtPhoneNumber.Location = new System.Drawing.Point(444, 150);
             this.txtPhoneNumber.Name = "txtPhoneNumber";
-            this.txtPhoneNumber.Size = new System.Drawing.Size(313, 31);
+            this.txtPhoneNumber.Size = new System.Drawing.Size(313, 32);
             this.txtPhoneNumber.TabIndex = 38;
             // 
             // txtFullName
             // 
-            this.txtFullName.Location = new System.Drawing.Point(273, 62);
+            this.txtFullName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtFullName.Location = new System.Drawing.Point(50, 150);
             this.txtFullName.Name = "txtFullName";
-            this.txtFullName.Size = new System.Drawing.Size(313, 31);
+            this.txtFullName.Size = new System.Drawing.Size(313, 32);
             this.txtFullName.TabIndex = 37;
             // 
-            // label9
+            // lblMaritalStatus
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label9.Location = new System.Drawing.Point(46, 429);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(172, 32);
-            this.label9.TabIndex = 35;
-            this.label9.Text = "Marital Status";
+            this.lblMaritalStatus.AutoSize = true;
+            this.lblMaritalStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblMaritalStatus.ForeColor = System.Drawing.Color.Navy;
+            this.lblMaritalStatus.Location = new System.Drawing.Point(444, 209);
+            this.lblMaritalStatus.Name = "lblMaritalStatus";
+            this.lblMaritalStatus.Size = new System.Drawing.Size(124, 22);
+            this.lblMaritalStatus.TabIndex = 35;
+            this.lblMaritalStatus.Text = "Marital Status:";
             // 
-            // label8
+            // lblYear
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label8.Location = new System.Drawing.Point(511, 376);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(63, 32);
-            this.label8.TabIndex = 34;
-            this.label8.Text = "Year";
+            this.lblYear.AutoSize = true;
+            this.lblYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblYear.ForeColor = System.Drawing.Color.Navy;
+            this.lblYear.Location = new System.Drawing.Point(263, 503);
+            this.lblYear.Name = "lblYear";
+            this.lblYear.Size = new System.Drawing.Size(48, 22);
+            this.lblYear.TabIndex = 34;
+            this.lblYear.Text = "Year";
             // 
-            // label7
+            // lblMonth
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(371, 376);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(90, 32);
-            this.label7.TabIndex = 33;
-            this.label7.Text = "Month";
+            this.lblMonth.AutoSize = true;
+            this.lblMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblMonth.ForeColor = System.Drawing.Color.Navy;
+            this.lblMonth.Location = new System.Drawing.Point(263, 459);
+            this.lblMonth.Name = "lblMonth";
+            this.lblMonth.Size = new System.Drawing.Size(59, 22);
+            this.lblMonth.TabIndex = 33;
+            this.lblMonth.Text = "Month";
             // 
-            // label6
+            // lblDay
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(273, 376);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(58, 32);
-            this.label6.TabIndex = 32;
-            this.label6.Text = "Day";
+            this.lblDay.AutoSize = true;
+            this.lblDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblDay.ForeColor = System.Drawing.Color.Navy;
+            this.lblDay.Location = new System.Drawing.Point(263, 416);
+            this.lblDay.Name = "lblDay";
+            this.lblDay.Size = new System.Drawing.Size(42, 22);
+            this.lblDay.TabIndex = 32;
+            this.lblDay.Text = "Day";
             // 
-            // label5
+            // lblDateOfBirth
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(46, 339);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(161, 32);
-            this.label5.TabIndex = 31;
-            this.label5.Text = "Date of Birth";
+            this.lblDateOfBirth.AutoSize = true;
+            this.lblDateOfBirth.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblDateOfBirth.ForeColor = System.Drawing.Color.Navy;
+            this.lblDateOfBirth.Location = new System.Drawing.Point(50, 381);
+            this.lblDateOfBirth.Name = "lblDateOfBirth";
+            this.lblDateOfBirth.Size = new System.Drawing.Size(115, 22);
+            this.lblDateOfBirth.TabIndex = 31;
+            this.lblDateOfBirth.Text = "Date of Birth:";
             // 
-            // label4
+            // lblGender
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(46, 260);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(97, 32);
-            this.label4.TabIndex = 30;
-            this.label4.Text = "Gender";
+            this.lblGender.AutoSize = true;
+            this.lblGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblGender.ForeColor = System.Drawing.Color.Navy;
+            this.lblGender.Location = new System.Drawing.Point(444, 385);
+            this.lblGender.Name = "lblGender";
+            this.lblGender.Size = new System.Drawing.Size(75, 22);
+            this.lblGender.TabIndex = 30;
+            this.lblGender.Text = "Gender:";
             // 
-            // label10
+            // lblFavouriteColor
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label10.Location = new System.Drawing.Point(46, 519);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(189, 32);
-            this.label10.TabIndex = 29;
-            this.label10.Text = "Favourite Color";
+            this.lblFavouriteColor.AutoSize = true;
+            this.lblFavouriteColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblFavouriteColor.ForeColor = System.Drawing.Color.Navy;
+            this.lblFavouriteColor.Location = new System.Drawing.Point(444, 298);
+            this.lblFavouriteColor.Name = "lblFavouriteColor";
+            this.lblFavouriteColor.Size = new System.Drawing.Size(138, 22);
+            this.lblFavouriteColor.TabIndex = 29;
+            this.lblFavouriteColor.Text = "Favourite Color:";
             // 
-            // label3
+            // lblPhoneNo
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(46, 193);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(187, 32);
-            this.label3.TabIndex = 28;
-            this.label3.Text = "Phone Number";
+            this.lblPhoneNo.AutoSize = true;
+            this.lblPhoneNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblPhoneNo.ForeColor = System.Drawing.Color.Navy;
+            this.lblPhoneNo.Location = new System.Drawing.Point(444, 125);
+            this.lblPhoneNo.Name = "lblPhoneNo";
+            this.lblPhoneNo.Size = new System.Drawing.Size(135, 22);
+            this.lblPhoneNo.TabIndex = 28;
+            this.lblPhoneNo.Text = "Phone Number:";
             // 
-            // label2
+            // lblAddress
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(46, 126);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(106, 32);
-            this.label2.TabIndex = 36;
-            this.label2.Text = "Address";
+            this.lblAddress.AutoSize = true;
+            this.lblAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblAddress.ForeColor = System.Drawing.Color.Navy;
+            this.lblAddress.Location = new System.Drawing.Point(50, 209);
+            this.lblAddress.Name = "lblAddress";
+            this.lblAddress.Size = new System.Drawing.Size(81, 22);
+            this.lblAddress.TabIndex = 36;
+            this.lblAddress.Text = "Address:";
             // 
-            // label1
+            // lblFullName
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(46, 59);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(129, 32);
-            this.label1.TabIndex = 27;
-            this.label1.Text = "Full Name";
+            this.lblFullName.AutoSize = true;
+            this.lblFullName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblFullName.ForeColor = System.Drawing.Color.Navy;
+            this.lblFullName.Location = new System.Drawing.Point(50, 125);
+            this.lblFullName.Name = "lblFullName";
+            this.lblFullName.Size = new System.Drawing.Size(96, 22);
+            this.lblFullName.TabIndex = 27;
+            this.lblFullName.Text = "Full Name:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.Transparent;
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label11.ForeColor = System.Drawing.Color.Navy;
+            this.label11.Location = new System.Drawing.Point(230, 25);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(332, 48);
+            this.label11.TabIndex = 49;
+            this.label11.Text = "Create User Profile";
             // 
             // CreateUserProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(635, 709);
+            this.BackColor = System.Drawing.Color.AliceBlue;
+            this.ClientSize = new System.Drawing.Size(814, 672);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnCreate);
             this.Controls.Add(this.cmbMaritalStatus);
@@ -278,17 +319,18 @@
             this.Controls.Add(this.txtFavouriteColor);
             this.Controls.Add(this.txtPhoneNumber);
             this.Controls.Add(this.txtFullName);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblMaritalStatus);
+            this.Controls.Add(this.lblYear);
+            this.Controls.Add(this.lblMonth);
+            this.Controls.Add(this.lblDay);
+            this.Controls.Add(this.lblDateOfBirth);
+            this.Controls.Add(this.lblGender);
+            this.Controls.Add(this.lblFavouriteColor);
+            this.Controls.Add(this.lblPhoneNo);
+            this.Controls.Add(this.lblAddress);
+            this.Controls.Add(this.lblFullName);
             this.Name = "CreateUserProfile";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CreateUserProfile";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -309,15 +351,16 @@
         private TextBox txtFavouriteColor;
         private TextBox txtPhoneNumber;
         private TextBox txtFullName;
-        private Label label9;
-        private Label label8;
-        private Label label7;
-        private Label label6;
-        private Label label5;
-        private Label label4;
-        private Label label10;
-        private Label label3;
-        private Label label2;
-        private Label label1;
+        private Label lblMaritalStatus;
+        private Label lblYear;
+        private Label lblMonth;
+        private Label lblDay;
+        private Label lblDateOfBirth;
+        private Label lblGender;
+        private Label lblFavouriteColor;
+        private Label lblPhoneNo;
+        private Label lblAddress;
+        private Label lblFullName;
+        private Label label11;
     }
 }

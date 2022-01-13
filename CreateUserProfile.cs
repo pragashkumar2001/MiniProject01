@@ -18,7 +18,7 @@ namespace UserProfile
             if (IsValid())
             {
                 this.Hide(); // hide the current form
-                UserDetails userDetails = new UserDetails(this.GetFullName());
+                UserDetails userDetails = new UserDetails(this.GetFullName(), this.GetAge());
                 userDetails.ShowDialog();
             }
         }
@@ -173,9 +173,20 @@ namespace UserProfile
         /// </summary>
         private string ToTitleCase(string text)
         {
-           return CultureInfo.InvariantCulture.TextInfo.ToTitleCase(text.ToLower());
+            return CultureInfo.InvariantCulture.TextInfo.ToTitleCase(text.ToLower());
         }
 
+        /// <summary>
+        /// Get age
+        /// </summary>
+        /// <returns></returns>
+        private int GetAge()
+        {
+            int enteredYear = int.Parse(txtYear.Text);
+            int currentYear = DateTime.Now.Year;
+            int age = currentYear - enteredYear;
+            return age;
+        }
 
         /// <summary>
         /// Get fullname with prefix
@@ -198,16 +209,8 @@ namespace UserProfile
                 namePrefix = "Mr.";
             }
 
-            // calculate age
-            int enteredYear = int.Parse(txtYear.Text);
-            int currentYear = DateTime.Now.Year;
-            int age = currentYear - enteredYear;
-
-
-            string fullName = namePrefix + " " + this.ToTitleCase(txtFullName.Text) + ". You are " + age + " years old.";
-
+            string fullName = namePrefix + " " + this.ToTitleCase(txtFullName.Text);
             return fullName;
-
         }
 
         /// <summary>
@@ -226,5 +229,7 @@ namespace UserProfile
             cmbMaritalStatus.SelectedIndex = 0;
             txtFavouriteColor.Text = string.Empty;
         }
+
+
     }
 }
