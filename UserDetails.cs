@@ -2,17 +2,17 @@
 {
     public partial class UserDetails : Form
     {
-        public string FullName { get; set; }
+        public string Message { get; set; }
 
-        public UserDetails(string fullName)
+        public UserDetails(string message)
         {
-            FullName = fullName;
+            Message = message;
             InitializeComponent();
         }
 
         private void UserDetails_Load_1(object sender, EventArgs e)
         {
-            lblFullName.Text = FullName;
+            lblFullName.Text = Message;
         }
 
         private void btnBack_Click_1(object sender, EventArgs e)

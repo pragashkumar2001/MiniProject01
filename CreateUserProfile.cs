@@ -1,4 +1,5 @@
-﻿using System.Text.RegularExpressions;
+﻿using System.Globalization;
+using System.Text.RegularExpressions;
 
 namespace UserProfile
 {
@@ -43,7 +44,7 @@ namespace UserProfile
             }
 
             // fullname field validation
-            if (!this.CheckLetterValidation(txtFullName.Text))
+            if (!this.CheckLetterWithSpaceValidation(txtFullName.Text))
             {
                 MessageBox.Show("Please enter letters only", "Full Name Validation Error");
                 txtFullName.Focus();
@@ -57,7 +58,8 @@ namespace UserProfile
                 txtPhoneNumber.Focus();
                 return false;
             }
-            else if (txtPhoneNumber.Text.Length != 10)
+
+            if (txtPhoneNumber.Text.Length != 10)
             {
                 MessageBox.Show("Phone Number format is invalid. Please enter 10 digits only", "Phone Number Validation Error");
                 txtPhoneNumber.Focus();
@@ -72,7 +74,8 @@ namespace UserProfile
                 txtDay.Focus();
                 return false;
             }
-            else if (int.Parse(txtDay.Text) < 01 && int.Parse(txtDay.Text) > 31)
+
+            if (int.Parse(txtDay.Text) < 01 || int.Parse(txtDay.Text) > 31)
             {
                 MessageBox.Show("Day field format is invalid", "Day Field Validation Error");
                 txtDay.Focus();
@@ -86,7 +89,8 @@ namespace UserProfile
                 txtMonth.Focus();
                 return false;
             }
-            else if (int.Parse(txtMonth.Text) < 01 && int.Parse(txtMonth.Text) > 12)
+
+            if (int.Parse(txtMonth.Text) < 01 || int.Parse(txtMonth.Text) > 12)
             {
                 MessageBox.Show("Month field format is invalid", "Month Field Validation Error");
                 txtMonth.Focus();
@@ -98,16 +102,18 @@ namespace UserProfile
             if (!this.CheckNumberValidation(txtYear.Text))
             {
                 MessageBox.Show("Please enter numbers only", "Year Field Validation Error");
-                txtPhoneNumber.Focus();
+                txtYear.Focus();
                 return false;
             }
-            else if (txtPhoneNumber.Text.Length != 4)
+
+            if (txtYear.Text.Length != 4)
             {
                 MessageBox.Show("Year field format is invalid. Please enter 4 digits only", "Year Field Validation Error");
-                txtPhoneNumber.Focus();
+                txtYear.Focus();
                 return false;
             }
-            else if (int.Parse(txtYear.Text) >= 2022)
+
+            if (int.Parse(txtYear.Text) >= DateTime.Now.Year)
             {
                 MessageBox.Show("Year must in before the current year", "Year Field Validation Error");
                 txtYear.Focus();
@@ -131,7 +137,19 @@ namespace UserProfile
         /// </summary>
         private bool CheckLetterValidation(string fieldName)
         {
-            if (Regex.IsMatch(fieldName, @"[a-zA-Z]"))
+            if (Regex.IsMatch(fieldName, @"^[a-zA-Z]+$"))
+            {
+                return true;
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// Returns true if the fieldName contains letters with spaces else returns false
+        /// </summary>
+        private bool CheckLetterWithSpaceValidation(string fieldName)
+        {
+            if (Regex.IsMatch(fieldName, @"^[a-zA-Z]+(?:[\s.]+[a-zA-Z]+)*$"))
             {
                 return true;
             }
@@ -143,7 +161,7 @@ namespace UserProfile
         /// </summary>
         private bool CheckNumberValidation(string fieldName)
         {
-            if (Regex.IsMatch(fieldName, @"[0-9]"))
+            if (Regex.IsMatch(fieldName, @"^[0-9]+$"))
             {
                 return true;
             }
@@ -151,10 +169,20 @@ namespace UserProfile
         }
 
         /// <summary>
+        /// Converts string to title case
+        /// </summary>
+        private string ToTitleCase(string text)
+        {
+           return CultureInfo.InvariantCulture.TextInfo.ToTitleCase(text.ToLower());
+        }
+
+
+        /// <summary>
         /// Get fullname with prefix
         /// </summary>
         private string GetFullName()
         {
+            // get name prefix
             string namePrefix;
 
             if (radioFemale.Checked && cmbMaritalStatus.SelectedIndex is 1)
@@ -170,13 +198,13 @@ namespace UserProfile
                 namePrefix = "Mr.";
             }
 
+            // calculate age
             int enteredYear = int.Parse(txtYear.Text);
-
-            var currentYear = DateTime.Now.Year;
-
+            int currentYear = DateTime.Now.Year;
             int age = currentYear - enteredYear;
 
-            string fullName = namePrefix + " " + txtFullName.Text + ". You are " + age + " years old";
+
+            string fullName = namePrefix + " " + this.ToTitleCase(txtFullName.Text) + ". You are " + age + " years old";
 
             return fullName;
 
