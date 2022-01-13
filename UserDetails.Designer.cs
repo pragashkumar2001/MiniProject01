@@ -28,21 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblFullName = new System.Windows.Forms.Label();
+            this.lblWelcomeMessage = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // lblFullName
+            // lblWelcomeMessage
             // 
-            this.lblFullName.AutoSize = true;
-            this.lblFullName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblFullName.Location = new System.Drawing.Point(179, 39);
-            this.lblFullName.Name = "lblFullName";
-            this.lblFullName.Size = new System.Drawing.Size(173, 32);
-            this.lblFullName.TabIndex = 0;
-            this.lblFullName.Text = "<User Name>";
-            
+            this.lblWelcomeMessage.AutoSize = true;
+            this.lblWelcomeMessage.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblWelcomeMessage.Location = new System.Drawing.Point(179, 39);
+            this.lblWelcomeMessage.Name = "lblWelcomeMessage";
+            this.lblWelcomeMessage.Size = new System.Drawing.Size(353, 32);
+            this.lblWelcomeMessage.TabIndex = 0;
+            this.lblWelcomeMessage.Text = "<Prefix><User Name><Age>";
             // 
             // label1
             // 
@@ -57,7 +56,7 @@
             // btnBack
             // 
             this.btnBack.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnBack.Location = new System.Drawing.Point(179, 129);
+            this.btnBack.Location = new System.Drawing.Point(220, 144);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(112, 46);
             this.btnBack.TabIndex = 1;
@@ -69,10 +68,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(609, 187);
+            this.ClientSize = new System.Drawing.Size(573, 234);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.lblFullName);
+            this.Controls.Add(this.lblWelcomeMessage);
             this.Name = "UserDetails";
             this.Text = "UserDetails";
             this.Load += new System.EventHandler(this.UserDetails_Load_1);
@@ -83,7 +82,7 @@
 
         #endregion
 
-        private Label lblFullName;
+        private Label lblWelcomeMessage;
         private Label label1;
         private Button btnBack;
     }

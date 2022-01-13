@@ -204,7 +204,7 @@ namespace UserProfile
             int age = currentYear - enteredYear;
 
 
-            string fullName = namePrefix + " " + this.ToTitleCase(txtFullName.Text) + ". You are " + age + " years old";
+            string fullName = namePrefix + " " + this.ToTitleCase(txtFullName.Text) + ". You are " + age + " years old.";
 
             return fullName;
 

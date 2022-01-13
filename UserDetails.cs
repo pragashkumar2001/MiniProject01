@@ -12,7 +12,7 @@
 
         private void UserDetails_Load_1(object sender, EventArgs e)
         {
-            lblFullName.Text = Message;
+            lblWelcomeMessage.Text = Message;
         }
 
         private void btnBack_Click_1(object sender, EventArgs e)
