@@ -4,72 +4,30 @@ namespace UserProfile
 {
     public partial class CreateUserProfile : Form
     {
-        public static string setValueVariable = "";
-
         public CreateUserProfile()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Create button on click event
+        /// </summary>
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            string Pronoun;
-            int Age;
-
-            if (radioFemale.Checked && cmbMaritalStatus.SelectedIndex is 1)
-            {
-                Pronoun = "Mrs.";
-            }
-            else if (radioFemale.Checked && cmbMaritalStatus.SelectedIndex is 2)
-            {
-                Pronoun = "Miss.";
-            }
-            else
-            {
-                Pronoun = "Mr.";
-            }
-
-            int enteredyear = int.Parse(txtYear.Text);
-
-            var year = DateTime.Now.Year;
-
-            if (year < enteredyear)
-            {
-                MessageBox.Show("Please check your birth year", "Birth Year Not valid");
-                return;
-
-            }
-
-            Age = year - enteredyear;
-
-            setValueVariable = "Welcome: " + Pronoun + " " + txtFullName.Text + ". You are " + Age + " years old";
-
             if (IsValid())
             {
                 this.Hide(); // hide the current form
-                UserDetails userDetails = new UserDetails();
+                UserDetails userDetails = new UserDetails(this.GetFullName());
                 userDetails.ShowDialog();
             }
-
         }
 
-
+        /// <summary>
+        /// Verify form fields' validations
+        /// </summary>
         private bool IsValid()
         {
-            if (Regex.IsMatch(txtFullName.Text, @"[a-zA-Z]") == false)
-            {
-                MessageBox.Show("Please enter letters only", "Name Validation Error");
-                txtFullName.Focus();
-                return false;
-            }
-
-            if (Regex.IsMatch(txtPhoneNumber.Text, @"[0-9]") == false)
-            {
-                MessageBox.Show("Please enter numbers only", "Phone Number Validation Error");
-                txtPhoneNumber.Focus();
-                return false;
-            }
-
+            // empty fields validation
             if (txtFullName.Text == string.Empty ||
                 txtAddress.Text == string.Empty ||
                 txtPhoneNumber.Text == string.Empty ||
@@ -84,10 +42,149 @@ namespace UserProfile
                 return false;
             }
 
+            // fullname field validation
+            if (!this.CheckLetterValidation(txtFullName.Text))
+            {
+                MessageBox.Show("Please enter letters only", "Full Name Validation Error");
+                txtFullName.Focus();
+                return false;
+            }
+
+            // phone number field validations
+            if (!this.CheckNumberValidation(txtPhoneNumber.Text))
+            {
+                MessageBox.Show("Please enter numbers only", "Phone Number Validation Error");
+                txtPhoneNumber.Focus();
+                return false;
+            }
+            else if (txtPhoneNumber.Text.Length != 10)
+            {
+                MessageBox.Show("Phone Number format is invalid. Please enter 10 digits only", "Phone Number Validation Error");
+                txtPhoneNumber.Focus();
+                return false;
+            }
+
+
+            // birth day field validation
+            if (!this.CheckNumberValidation(txtDay.Text))
+            {
+                MessageBox.Show("Please enter numbers only", "Day Field Validation Error");
+                txtDay.Focus();
+                return false;
+            }
+            else if (int.Parse(txtDay.Text) < 01 && int.Parse(txtDay.Text) > 31)
+            {
+                MessageBox.Show("Day field format is invalid", "Day Field Validation Error");
+                txtDay.Focus();
+                return false;
+            }
+
+            // birth month field validation
+            if (!this.CheckNumberValidation(txtMonth.Text))
+            {
+                MessageBox.Show("Please enter numbers only", "Month Field Validation Error");
+                txtMonth.Focus();
+                return false;
+            }
+            else if (int.Parse(txtMonth.Text) < 01 && int.Parse(txtMonth.Text) > 12)
+            {
+                MessageBox.Show("Month field format is invalid", "Month Field Validation Error");
+                txtMonth.Focus();
+                return false;
+            }
+
+
+            // birth year field validations
+            if (!this.CheckNumberValidation(txtYear.Text))
+            {
+                MessageBox.Show("Please enter numbers only", "Year Field Validation Error");
+                txtPhoneNumber.Focus();
+                return false;
+            }
+            else if (txtPhoneNumber.Text.Length != 4)
+            {
+                MessageBox.Show("Year field format is invalid. Please enter 4 digits only", "Year Field Validation Error");
+                txtPhoneNumber.Focus();
+                return false;
+            }
+            else if (int.Parse(txtYear.Text) >= 2022)
+            {
+                MessageBox.Show("Year must in before the current year", "Year Field Validation Error");
+                txtYear.Focus();
+                return false;
+            }
+
+            // favourite color field validations
+            if (!this.CheckLetterValidation(txtFavouriteColor.Text))
+            {
+                MessageBox.Show("Please enter letters only", "Color Name Validation Error");
+                txtFavouriteColor.Focus();
+                return false;
+            }
 
             return true;
         }
 
+
+        /// <summary>
+        /// Returns true if the fieldName contains letters else returns false
+        /// </summary>
+        private bool CheckLetterValidation(string fieldName)
+        {
+            if (Regex.IsMatch(fieldName, @"[a-zA-Z]"))
+            {
+                return true;
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// Returns true if the fieldName contains numbers else returns false
+        /// </summary>
+        private bool CheckNumberValidation(string fieldName)
+        {
+            if (Regex.IsMatch(fieldName, @"[0-9]"))
+            {
+                return true;
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// Get fullname with prefix
+        /// </summary>
+        private string GetFullName()
+        {
+            string namePrefix;
+
+            if (radioFemale.Checked && cmbMaritalStatus.SelectedIndex is 1)
+            {
+                namePrefix = "Mrs.";
+            }
+            else if (radioFemale.Checked && cmbMaritalStatus.SelectedIndex is 2)
+            {
+                namePrefix = "Miss.";
+            }
+            else
+            {
+                namePrefix = "Mr.";
+            }
+
+            int enteredYear = int.Parse(txtYear.Text);
+
+            var currentYear = DateTime.Now.Year;
+
+            int age = currentYear - enteredYear;
+
+            string fullName = namePrefix + " " + txtFullName.Text + ". You are " + age + " years old";
+
+            return fullName;
+
+        }
+
+        /// <summary>
+        /// Clear button on click event
+        /// </summary>
         private void btnClear_Click(object sender, EventArgs e)
         {
             txtFullName.Text = string.Empty;
@@ -100,7 +197,6 @@ namespace UserProfile
             txtYear.Text = string.Empty;
             cmbMaritalStatus.SelectedIndex = 0;
             txtFavouriteColor.Text = string.Empty;
-
         }
     }
 }

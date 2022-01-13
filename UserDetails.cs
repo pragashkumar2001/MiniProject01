@@ -2,17 +2,20 @@
 {
     public partial class UserDetails : Form
     {
-        public UserDetails()
+        public string FullName { get; set; }
+
+        public UserDetails(string fullName)
         {
+            FullName = fullName;
             InitializeComponent();
         }
 
-        private void UserDetails_Load(object sender, EventArgs e)
+        private void UserDetails_Load_1(object sender, EventArgs e)
         {
-            Variable.Text = CreateUserProfile.setValueVariable;
+            lblFullName.Text = FullName;
         }
 
-        private void btnBack_Click(object sender, EventArgs e)
+        private void btnBack_Click_1(object sender, EventArgs e)
         {
             this.Hide();
             CreateUserProfile createUserProfile = new CreateUserProfile();
